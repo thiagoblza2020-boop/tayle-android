@@ -20,9 +20,11 @@ jobs:
         with:
           distribution: temurin
           java-version: '17'
-
       - name: Dar permissão ao Gradle
-        run: chmod +x gradlew
+        run: |
+          ls -la
+          chmod +x ./gradlew
+      
 
       - name: Compilar TAYLE
         run: ./gradlew bundleRelease --no-daemon
